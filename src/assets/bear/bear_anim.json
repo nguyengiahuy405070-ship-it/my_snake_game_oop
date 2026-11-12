@@ -1,0 +1,119 @@
+{
+  "frame_size": [
+    72,
+    48
+  ],
+  "pivot": [
+    26,
+    24
+  ],
+  "facing": "phải (+x), xoay theo boss.getAngle()",
+  "grid": {
+    "cols": 4,
+    "rows": 4
+  },
+  "suggested_scale": 2,
+  "directions_prerender": 16,
+  "sheets": {
+    "normal": "bear_sheet.png",
+    "enraged": "bear_sheet_enraged.png (đổi khi máu <= 40%)"
+  },
+  "clips": {
+    "walk": {
+      "row": 0,
+      "cols": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "frame_time": 0.12,
+      "loop": true,
+      "note": "đứng yên = cột 0"
+    },
+    "windup": {
+      "row": 1,
+      "cols": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "duration": 0.55,
+      "timeline": "0-25% cột0, 25-55% cột1, 55-100% cột2/3 đổi mỗi 0.06s (rung)"
+    },
+    "lunge": {
+      "row": 2,
+      "cols": [
+        0,
+        1
+      ],
+      "duration": 0.29,
+      "timeline": "35% đầu cột0, còn lại cột1"
+    },
+    "bite": {
+      "row": 2,
+      "cols": [
+        2,
+        3
+      ],
+      "duration": 0.25,
+      "timeline": "50% đầu cột2 (há), 50% sau cột3 (khép); gây sát thương ở giây 0"
+    },
+    "retreat": {
+      "row": 3,
+      "cols": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "frame_time": 0.1,
+      "duration": 0.9,
+      "loop": true
+    },
+    "recover": {
+      "row": 0,
+      "cols": [
+        0
+      ],
+      "duration": 0.35
+    }
+  },
+  "fx": {
+    "bear_fx_bite.png": {
+      "frame_size": [
+        48,
+        48
+      ],
+      "frames": 5,
+      "frame_time": 0.05,
+      "note": "đặt trước mõm gấu / tại người chơi, xoay theo hướng gấu"
+    },
+    "bear_fx_dust.png": {
+      "frame_size": [
+        32,
+        32
+      ],
+      "frames": 4,
+      "frame_time": 0.07,
+      "note": "dưới chân gấu lúc bắt đầu lao"
+    },
+    "bear_fx_streak.png": {
+      "frame_size": [
+        64,
+        24
+      ],
+      "frames": 1,
+      "note": "vẽ phía sau gấu khi lao, alpha ~0.7, xoay theo hướng"
+    }
+  },
+  "suggested_timings_sec": {
+    "windup": 0.55,
+    "lunge": 0.29,
+    "bite": 0.25,
+    "retreat": 0.9,
+    "recover": 0.35,
+    "enraged_windup_mult": 0.65
+  }
+}
